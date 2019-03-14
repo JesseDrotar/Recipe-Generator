@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Recipe</th>
+            <th>Ingredients</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+            <tr>
+                <td>{{this.recipeName}}</td>
+                <td>
+                    {{#each this.recipeIngredients}}
+                        {{this.ingredient}}
+                        ({{this.quantity}})
+                    {{/each}}
+                </td>
+                <td><a href="/recipe/edit/{{this.id}}">Add Ingredients</a></td>
+                <td><a href="/recipe/delete/{{this.id}}">Delete Recipes</a></td>
+            </tr>
+        {{/each}}
+    </tbody>
+    <tfooter>
+		<tr><td>
+		<button class="btn btn-primary" 
+			onClick="addRecipe();">Add Recipe</button>
+		</td></tr>
+	</tfooter>
+</table>

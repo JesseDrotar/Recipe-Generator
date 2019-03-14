@@ -1,0 +1,39 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Pantry</th>
+            <th>Ingredients</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+            <tr>
+                <td>{{this.pantryName}}</td>
+                <td>
+                    {{#each this.pantryIngredients}}
+                        {{this.ingredient}}
+                        ({{this.quantity}})
+                    {{/each}}
+                </td>
+                <td><a href="/recipe/available/{{this.id}}">Available Recipes</a></td>
+                <td><a href="/pantry/edit/{{this.id}}">Add Ingredients</a></td>
+                <td><a href="/pantry/delete/{{this.id}}">Delete Pantry</a></td>
+            </tr>
+        {{/each}}
+    </tbody>
+    <tfooter>
+		<tr>
+            <td>
+                <button class="btn btn-primary" 
+                    onClick="addPantry();">Add Pantry</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" 
+                    onClick="home();">Home</button>
+            </td>
+        </tr>
+	</tfooter>
+</table>

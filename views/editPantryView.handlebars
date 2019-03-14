@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <form method="post" action="/pantry/edit/{{data.id}}">
+    <table class="table table-condensed">
+      <tbody>
+       <tr>
+        <th width="200">Enter ingredient followed by quantity: </th>
+        <td><input type="text" name="ingredients" required 
+              placeholder="comma separated"></td>
+       </tr>
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+           <input type="submit" value="Save" 
+              class="btn btn-success">
+           <input type="button" value="Cancel" 
+              class="btn btn-danger" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>
+
